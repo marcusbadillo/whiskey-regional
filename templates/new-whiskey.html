@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Whiskey
+{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="main-section">
+  <div class="jumbotron add-whiskey-hero text-center">
+    <h2 class="title">Add Whiskey!</h2>
+    <p class="lead">Use form below to add your favorite whiskey.</p>
+
+  </div>
+<div class="container">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+    <div class="form-wrapper">
+
+      <form  action="{{ url_for('newWhiskey') }}" method="post" enctype="multipart/form-data">
+        {% if e %}
+          <div class="alert alert-danger">
+            {{ e }}
+          </div>
+       {% endif %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <div class="form-group">
+         <legend>Whiskey Information</legend>
+        </div>
+				<div class="form-group">
+				  <label for="name">Name:</label>
+				  <input type="text" class="form-control" maxlength="100" name="name">
+				</div>
+        <div class="form-group">
+				  <label for="Description">Description:</label>
+				  <input type="text" class="form-control" maxlength="300" name="description">
+				</div>
+        <div class="form-group">
+				  <label for="file">Image:</label>
+				  <input type="file" class="form-control" name="file">
+				</div>
+        <div class="form-group">
+				  <label for="type">Type:</label>
+				  <input type="text" class="form-control" maxlength="100" name="type">
+				</div>
+        <div class="form-group">
+				  <label for="manufacturer">Manufacturer:</label>
+				  <input type="text" class="form-control" maxlength="100" name="manufacturer">
+				</div>
+        <div class="form-group">
+				  <label for="abv">ABV:</label>
+				  <input type="text" class="form-control" maxlength="10" name="abv">
+				</div>
+        <div class="form-group">
+				  <label for="region">Region:</label>
+          <select class="form-control" type="text" class="form-control" name="region">
+             <option value="" selected disabled>Select Region</option>
+             {% for region in all_regions %}
+             <option value="{{region.name}}">{{region.name}}</option>
+             {% endfor %}
+          </select>
+				</div>
+        <div class="form-group">
+				      <button type="submit" class="btn btn-block btn-primary" id="submit" type="submit">
+				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add</button>
+
+				</div>
+			</form>
+      <a href="{{url_for('showApp')}}"><button role="button" class="btn btn-block btn-danger" id="cancel-btn">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cancel</button></a>
+    </div>
+  </div>
+</div>
+
+</div>
+{% include "footer.html" %}
+{% endblock %}
