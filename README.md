@@ -1,5 +1,5 @@
 # Whiskey Regional - Whiskey By Regions
-> A fullstack project built with python, flask (Jinja2-2.8), PostgreSQL.
+> A fullstack project built with python, flask (Jinja2 views), PostgreSQL, and Google OAuth 2.0.
 
 ### What's inside
 In the repo you'll find the following directories and files.
@@ -8,12 +8,12 @@ In the repo you'll find the following directories and files.
 |----------------------|------------------------------------------------|
 | README.md            | how to instructions                            |
 | app.py               | Launches app                                   |
-| client_secrects.js   | Google+ Sign in Oauth2.0   credential          |
+| client_secrects.js   | U need to download this file                   |
 | create_db.py         | schema SQLAlchemy classes                      |
-| load_whiskey.py      | dummy data                                     |
+| load_whiskey.py      | dummy data to insert                           |
 | static               | JS, CSS, Fonts, images                         |
 | templates            | html views                                     |
-| uploads              | 2 test images                                  |
+| uploads              | directory for user uploads                     |
 
 ## Requirements / Dependencies
 These are local build setup for Mac OS X (10.11.x), install python 2 and PostgreSQL
@@ -87,29 +87,27 @@ $ python app.py
 
 7. open browser to [http://localhost:8000/](http://localhost:8000/)
 
-
-
 # JSON & XML Web Services:
-curl of visit in browser the following endpoints to return the specified data
+Visit the following endpoints to return the specified data
 
 ## JSON
-### localhost:8000/brands/JSON
+##### localhost:8000/brands/JSON
 Returns all brands
 
-### localhost:8000/regions/JSON
+##### localhost:8000/regions/JSON
 Return all regions
 
-### localhost:8000/brands/<int:id>/JSON
+##### localhost:8000/brands/<int:id>/JSON
 <int:id> == id of brand
 Return single brand
 
-### localhost:8000/regions/<int:id>/JSON
+##### localhost:8000/regions/<int:id>/JSON
 <int:id> == id of whiskey
 Return single region
 
 ## XML
-### localhost:8000/brands/XML
+##### localhost:8000/brands/XML
 Return all brands
 
-### localhost:8000/regions/XML
+##### localhost:8000/regions/XML
 Return all regions
