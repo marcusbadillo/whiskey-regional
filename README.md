@@ -7,13 +7,13 @@ In the repo you'll find the following directories and files.
 | File/Folder          | Provides                                       |
 |----------------------|------------------------------------------------|
 | README.md            | how to instructions                            |
-| app.py               | Launches app                                   |
-| client_secrects.js   | U need to download this file                   |
+| app.py               | launch app                                     |
+| client_secrects.js   | see set up OAuth 2.0                           |
 | create_db.py         | schema SQLAlchemy classes                      |
 | load_whiskey.py      | dummy data to insert                           |
-| static               | JS, CSS, Fonts, images                         |
-| templates            | html views                                     |
-| uploads              | directory for user uploads                     |
+| /static              | JS, CSS, Fonts, images                         |
+| /templates           | html views                                     |
+| /uploads             | directory for user uploads                     |
 
 ## Requirements / Dependencies
 Local prototyping setup for Mac OS X (10.11.x).
@@ -70,10 +70,10 @@ $ cd /whiskey-regional
 ```
 #### Set up [OAuth 2.0](https://support.google.com/googleapi/answer/6158849?hl=en&ref_topic=7013279).
 
-Python specific implementation [here](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
-and download client_secrets.json from  API console after OAuth is enabled and
+Python specific implementation located [here](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
+Once OAuth is enabled download client_secrets.json from  API console after and
 place in root directory. App cannot insert into local database without user
-verification via google account.
+authentication via google account.
 
 #### Build Database
 ```
@@ -91,6 +91,10 @@ $ python load_whiskey.py
 $ python app.py
 ```
 #### Open browser to [http://localhost:8000/](http://localhost:8000/)
+
+#### Click top right "Sign In" Button
+sign in via google account(email password not implemented yet)--you will be redirected to home page and '+ Whiskey' button
+will be available after user verification.
 
 # JSON & XML Web Services:
 Visit the following endpoints to return the specified data
