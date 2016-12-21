@@ -93,7 +93,7 @@ $ python app.py
 #### Open browser to [http://localhost:8000/](http://localhost:8000/)
 
 #### Click top right "Sign In" Button
-sign in via google account(email password not implemented yet)--you will be redirected to home page and '+ Whiskey' button
+Sign in via google account(email password not implemented yet)--you will be redirected to home page and '+ Whiskey' button
 will be available after user verification.
 
 # JSON & XML Web Services:
@@ -101,22 +101,22 @@ Visit the following endpoints to return the specified data
 
 ## JSON
 #### http://localhost:8000/brands/JSON
-Returns all brands
+_return all brands_
 
 #### http://localhost:8000/regions/JSON
-Return all regions
+_return all regions_
 
 #### http://localhost:8000/brands/<int:id>/JSON
-<int:id> == id of brand
-Return single brand
+<int:id> === id of brand
+_return single brand_
 
 #### http://localhost:8000/regions/<int:id>/JSON
 <int:id> == id of whiskey
-Return single region
+_return single region_
 
 ## XML
 #### http://localhost:8000/brands/XML
-Return all brands
+_return all brands_
 
 #### http://localhost:8000/regions/XML
-Return all regions
+_return all regions_
