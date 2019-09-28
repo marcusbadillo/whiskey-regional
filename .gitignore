@@ -3,3 +3,4 @@ create_db.pyc
 load_whiskey.pyc
 client_secrets.json
 whiskey_regions.db
+_src
