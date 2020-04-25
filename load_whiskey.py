@@ -148,4 +148,4 @@ session.add(japan)
 session.commit()
 
 
-print "whiskey added!"
+print("whiskey added!")

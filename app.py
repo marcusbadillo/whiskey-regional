@@ -37,7 +37,7 @@ import requests
 
 # for file uploads
 import os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 # list manipulation
 from operator import itemgetter
@@ -96,7 +96,7 @@ def showLogin():
 
     nologin = "True"
     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
-                    for x in xrange(32))
+                    for x in range(32))
     login_session['state'] = state
     return render_template('login.html', STATE=state, nologin=nologin)
 
@@ -148,7 +148,7 @@ def gconnect():
     if result['issued_to'] != CLIENT_ID:
         response = make_response(
             json.dumps("Token's client ID does not match app's."), 401)
-        print "Token's client ID does not match app's."
+        print("Token's client ID does not match app's.")
         response.headers['Content-Type'] = 'application/json'
         return response
 
@@ -190,7 +190,7 @@ def gconnect():
     output += login_session['picture']
     output += ' " class="profile-img-card" id="profile-img"> '
     flash("you are now logged in as %s" % login_session['username'])
-    print "Logged in!"
+    print("Logged in!")
     return output
 
 

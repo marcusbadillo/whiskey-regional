@@ -19,23 +19,23 @@ In the repo you'll find the following directories and files.
 
 ## Requirements / Dependencies
 
-Local prototyping setup for Mac OS X (10.11.x).
-Install python 2 and PostgreSQL however you like.
-I like [homebrew](http://brew.sh/) package manager.
+1. install [homebrew](https://brew.sh/) and install the rest with it. Or do you.
 
-### Install [python>=2.7.12](https://www.python.org/download/releases/2.7/) and [PostgreSQL>=9.6.1](https://www.postgresql.org/docs/9.6/static/index.html)
+2. install [pipenv](https://github.com/pypa/pipenv)
 
-```bash
-[user@machine/~]
-$ brew install python PostgreSQL
-```
+3. install [virtualenv](https://virtualenv.pypa.io/en/stable/installation.html)
+
+4. install [python>=3.7.7](https://www.python.org/)
+
+5. install [PostgreSQL>=12.2](https://www.postgresql.org/)
 
 ### Install [flask>=0.11.1](http://flask.pocoo.org/docs/0.11/), [sqlalchemy>=1.1](http://docs.sqlalchemy.org/en/latest/intro.html), [Flask-SeaSurf>=0.2.2](https://flask-seasurf.readthedocs.io/en/latest/), [oauth2client](https://github.com/google/oauth2client), [requests](http://docs.python-requests.org/en/master/user/install/)
 
 ```bash
-[user@machine/~]
-$ pip install Flask SQLAlchemy flask-seasurf oauth2client requests
+pipenv install
 ```
+
+> [pipenv review](https://pipenv-fork.readthedocs.io/en/latest/basics.html)
 
 ## Getting Started
 
@@ -45,7 +45,15 @@ $ pip install Flask SQLAlchemy flask-seasurf oauth2client requests
 git clone https://github.com/MediaDUK/whiskey-regional.git && cd _$
 ```
 
-### Set up [OAuth 2.0](https://support.google.com/googleapi/answer/6158849?hl=en&ref_topic=7013279)
+### Enter Virtual Env
+
+```bash
+virtualenv [your-env]
+source [your-env]/bin/activate
+[your-env]/bin/pip install google-api-python-client
+```
+
+### Set up [google-api-python-client](https://github.com/googleapis/google-api-python-client)
 
 Python specific implementation located [here](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
 Once OAuth is enabled download client_secrets.json from  API console after and
