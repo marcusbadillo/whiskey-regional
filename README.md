@@ -53,32 +53,17 @@ source [your-env]/bin/activate
 [your-env]/bin/pip install google-api-python-client
 ```
 
-### Set up [google-api-python-client](https://github.com/googleapis/google-api-python-client)
+### Set up [google-api-python-client](https://cloud.google.com/docs/authentication/api-keys)
 
-Python specific implementation located [here](https://developers.google.com/api-client-library/python/guide/aaa_oauth)
 Once OAuth is enabled download client_secrets.json from  API console after and
 place in root directory. App cannot insert into local database without user
 authentication via google account.
 
-### Build Database
+### Build Database, Load Whisky, start app, and open browser to [http://localhost:8000/](http://localhost:8000/)
 
 ```bash
-python create_db.py
+python create_db.py && python load_whiskey.py && python app.py
 ```
-
-### Load Some Whiskey
-
-```bash
-python load_whiskey.py
-```
-
-### Run Application
-
-```bash
-python app.py
-```
-
-### Open browser to [http://localhost:8000/](http://localhost:8000/)
 
 ## Viewing App
 
