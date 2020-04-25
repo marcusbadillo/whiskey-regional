@@ -13,6 +13,7 @@ oauth2client = "*"
 requests = "*"
 werkzeug = "*"
 google-auth-oauthlib = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
