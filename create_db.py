@@ -3,6 +3,7 @@
     class models.
 """
 # Column types used in app
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 
 # Construct a base class for declarative class definitions
