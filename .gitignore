@@ -27,4 +27,4 @@ whiskey_regions.db
 .vscode/
 
 # virtual env
-/server/vm
+server/vm
