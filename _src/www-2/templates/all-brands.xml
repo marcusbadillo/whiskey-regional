@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<brands>
+    {% for brand in brands_list %}
+        <brand>
+            {{brand.name}}
+        </brand>
+        <id>
+            {{brand.id}}
+        </id>
+        <description>
+            {{brand.description}}
+        </description>
+        <manufacturer>
+            {{brand.manufacturer}}
+        </manufacturer>
+        <abv>
+            {{brand.abv}}
+        </abv>
+        <proof>
+            {{brand.proof}}
+        </proof>
+        <type>
+            {{brand.type}}
+        </type>
+        <region>
+          {{brand.region}}
+        </region>
+    {% endfor %}
+</brands>

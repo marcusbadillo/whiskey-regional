@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Brands
+{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="main-section">
+  <div class="jumbotron brands-hero text-center">
+    <div>
+      <h2 class="title">Brands</h2>
+      <p class="lead">Know the brand? I got you covered.</p>
+      <p>
+          <h5>Search By :</h5>
+          <a class="btn btn-primary btn-lg" href="{{ url_for('showRegions') }}" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Region</a>
+      </p>
+    </div>
+
+  </div>
+<div class="container">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+    <ul class="list-unstyled regions-list">
+      {% for brand in brands %}
+      <li>
+        <div class="region-name">
+          <a class="btn btn-primary btn-lg" href="{{url_for('singleBrand',   brand=brand.name) }}"><h3>{{brand.name}}</h3>
+          </a>
+        </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+
+</div>
+{% include "footer.html" %}
+{% endblock %}

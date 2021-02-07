@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{region}}- WBG
+{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+<div class="container main-section ">
+  <div class="well text-center">
+    <h2 class="title">{{region}}</h2>
+  </div>
+  <div class="col-md-12">
+          {% for attr in brands_query %}
+          <div class="brand-details">
+            <div class="col-md-4">
+              <div class="well">
+
+                  {% if attr.img_name %}
+                      <p><img src="/uploads/{{attr.img_name}}" /></p>
+                  {% else %}
+
+                  {% endif %}
+              <h2 class="title">{{ attr.name }}</h2>
+              {% autoescape false %}
+                {{attr.p}}
+              {% endautoescape %}
+              <p class="lead"><span>Description: </span> {{ attr.description }} </p>
+              <p><span>Region: </span> {{ attr.region }} </p>
+              <p><span>Type: </span>{{ attr.type }} </p>
+              <p><span>ABV: </span> {{ attr.abv }}% </p>
+              {%if 'username' not in session %}
+
+              {% else %}
+                  <div class="row edit-delete-btns text-right">
+                  <a id="del-whiskey-btn" class="btn btn-primary btn-lg" href="{{url_for('editWhiskey', id=attr.id)}}" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a>
+                  <a id="edit-whiskey-btn" class="btn btn-danger btn-lg" href="{{ url_for('deleteWhiskey', id=attr.id) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
+                </div>
+              {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

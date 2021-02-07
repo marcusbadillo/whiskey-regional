@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+WBR - Whiskey by Regions
+{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="main-section">
+  <div class="jumbotron landing-page text-center">
+    <div class="container">
+      <div class = 'flash'>
+      		{% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class="list-unstyled">
+              {% for message in messages %}
+                  <li > <p class="lead"> <strong> {{ message }} </strong> </p> </li>
+              {% endfor %}
+              </ul>
+              {% endif %}
+          {% endwith %}
+      </div>
+      <h1>Whiskey knowledge at the click of a button!</h1>
+      <p>
+        <div class="row">
+          <h5>Search By :</h5>
+          <a class="btn btn-primary btn-lg" href="{{ url_for('showRegions') }}" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Region</a>
+          <a class="btn btn-primary btn-lg" href="{{ url_for('showBrands') }}" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Brand</a>
+        </div>
+      </p>
+    </div>
+  </div>
+  <div class="stats text-center">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <h2>Lastest Spirts Added</h2>
+          <p>New spirits to enjoy daily!.</p>
+          <ul class="list-unstyled brands-list">
+            {% for brand in lastest_whiskey_added %}
+              <li>
+                <a class="btn btn-primary btn-lg btn-block" href="{{ url_for('singleBrand', brand=brand.name) }}"><h3>{{brand.name}}</h3></a>
+                <p class="small">{{brand.manufacturer}}</p>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+        <div class="col-md-6 top-pros">
+          <h2>Top Whiskey Pros</h2>
+          <p>Ranked by how many whiskies added for each user.</p>
+          <ul class="list-unstyled top-pros-list text-center">
+            {% for pro in q %}
+            <li>
+              <div class="pro-con" >
+                      <img class="img-circle" height='50' src="{{pro[1].picture}}" width='50'>
+                      <p><span style="font-weight:700; font-size: 1.4em;">{{pro[1].name}}</span></p>
+                      <p class="whiskiesAdded whiskey-num-con">
+                          <span style="font-weight:900;font-size: 1.5em; display:inline-block">{{pro[0]}}</span>
+                          whiskies added.</p>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "footer.html" %}
+{% endblock content %}

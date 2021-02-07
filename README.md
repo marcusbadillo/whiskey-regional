@@ -6,16 +6,16 @@
 
 In the repo you'll find the following directories and files.
 
-| File/Folder          | Provides                                       |
-|----------------------|------------------------------------------------|
-| README.md            | how to instructions                            |
-| app.py               | launch app                                     |
-| client_secrects.js   | see set up OAuth 2.0                           |
-| create_db.py         | schema SQLAlchemy classes                      |
-| load_whiskey.py      | dummy data to insert                           |
-| /static              | JS, CSS, Fonts, images                         |
-| /templates           | html views                                     |
-| /uploads             | directory for user uploads                     |
+| File/Folder                | Provides                               |
+| -------------------------- | -------------------------------------- |
+| README.md                  | how to instructions                    |
+| /client                    | react front end                        |
+| /server/app.py             | launch app                             |
+| /server/client_secrects.js | see set up OAuth 2.0 (create your own) |
+| /server/create_db.py       | schema SQLAlchemy classes              |
+| /server/load_whiskey.py    | dummy data to insert                   |
+| /server/templates          | html views                             |
+| /server/uploads            | directory for user uploads             |
 
 ## Requirements / Dependencies
 
@@ -50,19 +50,19 @@ git clone https://github.com/MediaDUK/whiskey-regional.git && cd _$
 ```bash
 virtualenv [your-env]
 source [your-env]/bin/activate
-[your-env]/bin/pip install google-api-python-client
+[your-env]/bin/pip install google-api-python-client ...
 ```
 
 ### Set up [google-api-python-client](https://cloud.google.com/docs/authentication/api-keys)
 
-Once OAuth is enabled download client_secrets.json from  API console after and
+Once OAuth is enabled download client_secrets.json from API console after and
 place in root directory. App cannot insert into local database without user
 authentication via google account.
 
 ### Build Database, Load Whisky, start app, and open browser to [http://localhost:8000/](http://localhost:8000/)
 
 ```bash
-python create_db.py && python load_whiskey.py && python app.py
+pipenv run python create_db.py && python load_whiskey.py && python app.py
 ```
 
 ## Viewing App
@@ -72,7 +72,7 @@ python create_db.py && python load_whiskey.py && python app.py
 sign in via google account(email password not implemented yet)--you will be redirected to home page and '+ Whiskey' button
 will be available after user verification.
 
-## JSON & XML Web Services:
+## JSON & XML Web Services
 
 Visit the following endpoints to return the specified data
 
