@@ -328,7 +328,7 @@ def showApp():
 
     return render_template('index.html',
                            lastest_whiskey_added=lastest_whiskey_added,
-                           q=sorted_query)
+                           q=sorted_query, flask_token='token')
 
 
 # all Regions

@@ -50,7 +50,7 @@ git clone https://github.com/MediaDUK/whiskey-regional.git && cd _$
 ```bash
 virtualenv [your-env]
 source [your-env]/bin/activate
-[your-env]/bin/pip install google-api-python-client ...
+[your-env]/bin/pip install flask sqlalchemy flask_seasurf oauth2client sqlalchemy flask_sqlalchemy requests
 ```
 
 ### Set up [google-api-python-client](https://cloud.google.com/docs/authentication/api-keys)
