@@ -24,7 +24,7 @@
               <h2 class="title">{{ attr.name }}</h2>
               <p><span>Created By: </span>  <img src="{{creator.picture}}" class="img-circle" height='32' width='32'/> {{creator.name}} </p>
                 <p><span>Description: </span> {{ attr.description }} </p>
-                <p><span>Region: </span> {{ attr.region }} </p>
+                <p><span>Region: </span> {{ attr.region.name }} </p>
                 <p><span>Type: </span>{{ attr.type }} </p>
                 <p><span>ABV: </span> {{ attr.abv }}% </p>
                 {%if 'username' not in session %}
