@@ -92,3 +92,6 @@ client_secret.json
 
 # db artifacts
 whiskey_regions.db
+
+
+.vscode
