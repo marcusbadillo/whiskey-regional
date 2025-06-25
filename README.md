@@ -103,3 +103,66 @@ Visit the following endpoints to return the specified data
 ### [http://localhost:8000/regions/XML](http://localhost:8000/regions/XML)
 
 > _return all regions_
+
+<!-- # Whiskey Regional App
+
+This is a Flask-based API server for managing whiskeys by region. A React frontend will be added later.
+
+## Requirements
+
+- Python 3.11+
+- pipenv
+- Flask
+
+## Setup
+
+```bash
+pipenv install
+pipenv shell
+python app.py -->
+
+{% comment %}
+function signInCallback(authResult) {
+    if (authResult["code"]) {
+      // Hide the sign-in button now that the user is authorized
+      $("#signIn-google").attr("style", "display: none");
+      $("#signIn-Facebook").attr("style", "display: none");
+      $("#login-card").fadeOut("fast");
+      // Send the one-time-use code to the server, if server responds,
+      // 'login successful' message to the web page and redirect to landing page
+      $("#result").html(
+        '<h3 class="text-center">Searching!</h3><p class="lead text-center">Just a few seocnds...</p>'
+      );
+      $("#result").fadeIn("fast");
+
+      $.ajax({
+        type: "POST",
+        url: "/gconnect?state={{STATE}}",
+        processData: false,
+        data: authResult["code"],
+        contentType: "application/octet-stream; charset=utf-8",
+        success: function (result) {
+          if (result) {
+            console.log(result);
+
+            $("#result").fadeOut("fast");
+            $("#result").html(
+              '<p class="lead text-center">Login Successful! </p>' +
+                result +
+                '<p class="lead text-center">Redirecting...</p>'
+            );
+            $("#result").fadeIn("fast");
+            setTimeout(function () {
+              window.location.href = "/";
+            }, 4000);
+          } else if (authResult["error"]) {
+            console.log("There was an error: " + authResult["error"]);
+          } else {
+            $("#result").html(
+              "<p>Failed to make a server-side call. Check your configuration and console.</p>"
+            );
+          }
+        },
+      });
+    }
+  } {% endcomment %}
